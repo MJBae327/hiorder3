@@ -12,8 +12,9 @@ import java.util.List;
 @FeignClient(name = "menu", url = "${api.url.menu}")
  
 public interface MenuService {
+    // URL 경로에서 id를 추출해 Long 타입으로 전달
     @GetMapping(path="/menus/search/findByGetMenu/{id}")
-    public Menu getMenu(@PathVariableGetMenuQuery getMenuQuery);
+    public Menu getMenu(@PathVariable("id") Long id);
 
 }
 
